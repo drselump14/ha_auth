@@ -28,7 +28,7 @@ HA token, and access is re-checked on every request and LiveView mount.
 
 ```elixir
 config :ha_auth,
-  ha_url: System.get_env("HA_URL", "https://192.168.0.122:8123"),
+  ha_url: System.get_env("HA_URL", "http://homeassistant.local:8123"),
   # where browsers log in, if not ha_url (e.g. a hostname with a trusted cert)
   auth_url: System.get_env("HA_AUTH_URL"),
   # only for Kiosk Satellite sign-in; must be an HA *admin* token
