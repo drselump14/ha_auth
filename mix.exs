@@ -11,6 +11,9 @@ defmodule HaAuth.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      package: package(),
+      docs: [main: "readme", extras: ["README.md"], source_ref: "v#{@version}"],
+      source_url: "https://github.com/drselump14/ha_auth",
       description:
         "Sign in to Phoenix apps through Home Assistant: Kiosk Satellite, QR code, or HA's login."
     ]
@@ -32,7 +35,16 @@ defmodule HaAuth.MixProject do
       {:req, ">= 0.5.0"},
       {:jason, "~> 1.2"},
       {:eqrcode, "~> 0.2"},
-      {:lazy_html, ">= 0.1.0", only: :test}
+      {:lazy_html, ">= 0.1.0", only: :test},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/drselump14/ha_auth"},
+      files: ~w(lib mix.exs README.md LICENSE .formatter.exs)
     ]
   end
 end

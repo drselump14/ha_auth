@@ -19,8 +19,7 @@ HA token, and access is re-checked on every request and LiveView mount.
 
 ```elixir
 # mix.exs
-{:ha_auth, path: "../ha_auth"}
-# or {:ha_auth, git: "...", tag: "v0.1.0"}
+{:ha_auth, "~> 0.1"}
 ```
 
 ## Wire it up
